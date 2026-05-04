@@ -4,7 +4,7 @@ This repository contains the reproduction-essential code for SteelBench,
 a NeurIPS 2026 Datasets and Benchmarks track submission.
 
 The dataset itself is hosted on Hugging Face:
-  https://huggingface.co/datasets/<anon>/SteelBench
+  https://huggingface.co/datasets/steelbench/SteelBench
 
 ## Setup
 
@@ -19,7 +19,7 @@ pip install -r requirements.txt
 # Pull the dataset (or use the 50-clip sample inside the HF repo for a quick test)
 python -c "
 from huggingface_hub import snapshot_download
-snapshot_download(repo_id='<anon>/SteelBench', repo_type='dataset',
+snapshot_download(repo_id='steelbench/SteelBench', repo_type='dataset',
                   local_dir='./data', allow_patterns=['sample/**', 'manifests/**'])
 "
 ```
