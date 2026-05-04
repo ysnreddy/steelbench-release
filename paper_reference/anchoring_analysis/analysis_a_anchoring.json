@@ -1,0 +1,243 @@
+{
+  "overall": {
+    "layer_2": {
+      "anchored_agreement": 0.5120772946859904,
+      "anchored_n": 207,
+      "blind_agreement": 0.4041666666666667,
+      "blind_n": 240,
+      "bias_magnitude_pp": 10.791062801932371,
+      "bias_ci": [
+        0.44438525504553317,
+        0.579329230141451
+      ]
+    },
+    "total_calibration_comparisons": 559
+  },
+  "per_group": {
+    "A": {
+      "anchored_agreement": 0.6666666666666666,
+      "anchored_n": 42,
+      "blind_agreement": 0.34285714285714286,
+      "blind_n": 70,
+      "bias_pp": 32.38095238095238
+    },
+    "B": {
+      "anchored_agreement": 0.424,
+      "anchored_n": 125,
+      "blind_agreement": 0.2846715328467153,
+      "blind_n": 137,
+      "bias_pp": 13.932846715328468
+    },
+    "C": {
+      "anchored_agreement": 0.0,
+      "anchored_n": 9,
+      "blind_agreement": 0.1875,
+      "blind_n": 16,
+      "bias_pp": -18.75
+    },
+    "D": {
+      "anchored_agreement": 0.6666666666666666,
+      "anchored_n": 3,
+      "blind_agreement": 0.5714285714285714,
+      "blind_n": 7,
+      "bias_pp": 9.523809523809524
+    },
+    "E": {
+      "anchored_agreement": 0.09523809523809523,
+      "anchored_n": 21,
+      "blind_agreement": 0.16216216216216217,
+      "blind_n": 37,
+      "bias_pp": -6.692406692406694
+    },
+    "F": {
+      "anchored_agreement": 0.3088235294117647,
+      "anchored_n": 68,
+      "blind_agreement": 0.27631578947368424,
+      "blind_n": 76,
+      "bias_pp": 3.250773993808048
+    },
+    "X": {
+      "anchored_agreement": 0,
+      "anchored_n": 0,
+      "blind_agreement": 0.0,
+      "blind_n": 1,
+      "bias_pp": 0.0
+    }
+  },
+  "per_layer": {},
+  "direction": {
+    "total_with_expert_gt": 395,
+    "productive_anchor": 173,
+    "productive_anchor_pct": 43.79746835443038,
+    "harmful_anchor": 37,
+    "harmful_anchor_pct": 9.367088607594937,
+    "productive_override": 156,
+    "productive_override_pct": 39.49367088607595,
+    "harmful_override": 29,
+    "harmful_override_pct": 7.341772151898734,
+    "note": "productive_anchor = VLM correct + annotator accepts; harmful_anchor = VLM wrong + annotator accepts"
+  },
+  "per_class": {
+    "A1": {
+      "anchored_agreement": 0.6666666666666666,
+      "anchored_n": 36,
+      "blind_agreement": 0.35714285714285715,
+      "blind_n": 56,
+      "bias_pp": 30.95238095238095
+    },
+    "A2": {
+      "anchored_agreement": 1.0,
+      "anchored_n": 1,
+      "blind_agreement": 0.14285714285714285,
+      "blind_n": 7,
+      "bias_pp": 85.71428571428572
+    },
+    "A3": {
+      "anchored_agreement": 1.0,
+      "anchored_n": 1,
+      "blind_agreement": 0.0,
+      "blind_n": 6,
+      "bias_pp": 100.0
+    },
+    "A4": {
+      "anchored_agreement": 0.0,
+      "anchored_n": 4,
+      "blind_agreement": 0.0,
+      "blind_n": 3,
+      "bias_pp": 0.0
+    },
+    "A5": {
+      "anchored_agreement": 0.6666666666666666,
+      "anchored_n": 3,
+      "blind_agreement": 0.5,
+      "blind_n": 6,
+      "bias_pp": 16.666666666666664
+    },
+    "B1": {
+      "anchored_agreement": 0.39622641509433965,
+      "anchored_n": 53,
+      "blind_agreement": 0.34615384615384615,
+      "blind_n": 52,
+      "bias_pp": 5.00725689404935
+    },
+    "B2": {
+      "anchored_agreement": 0.375,
+      "anchored_n": 16,
+      "blind_agreement": 0.09090909090909091,
+      "blind_n": 11,
+      "bias_pp": 28.409090909090907
+    },
+    "B3": {
+      "anchored_agreement": 0.42857142857142855,
+      "anchored_n": 7,
+      "blind_agreement": 0.0,
+      "blind_n": 4,
+      "bias_pp": 42.857142857142854
+    },
+    "B4": {
+      "anchored_agreement": 0.5,
+      "anchored_n": 2,
+      "blind_agreement": 0.0,
+      "blind_n": 2,
+      "bias_pp": 50.0
+    },
+    "B5": {
+      "anchored_agreement": 0.34,
+      "anchored_n": 50,
+      "blind_agreement": 0.3611111111111111,
+      "blind_n": 36,
+      "bias_pp": -2.111111111111108
+    },
+    "B6": {
+      "anchored_agreement": 0.5,
+      "anchored_n": 2,
+      "blind_agreement": 0.1,
+      "blind_n": 10,
+      "bias_pp": 40.0
+    },
+    "B7": {
+      "anchored_agreement": 0.21052631578947367,
+      "anchored_n": 19,
+      "blind_agreement": 0.13953488372093023,
+      "blind_n": 43,
+      "bias_pp": 7.099143206854344
+    },
+    "B8": {
+      "anchored_agreement": 0.0,
+      "anchored_n": 5,
+      "blind_agreement": 0.0,
+      "blind_n": 2,
+      "bias_pp": 0.0
+    },
+    "B9": {
+      "anchored_agreement": 0.0,
+      "anchored_n": 4,
+      "blind_agreement": 0.0,
+      "blind_n": 2,
+      "bias_pp": 0.0
+    },
+    "C1": {
+      "anchored_agreement": 0.0,
+      "anchored_n": 4,
+      "blind_agreement": 0.14285714285714285,
+      "blind_n": 7,
+      "bias_pp": -14.285714285714285
+    },
+    "C3": {
+      "anchored_agreement": 0.0,
+      "anchored_n": 4,
+      "blind_agreement": 0.0,
+      "blind_n": 3,
+      "bias_pp": 0.0
+    },
+    "C4": {
+      "anchored_agreement": 0,
+      "anchored_n": 0,
+      "blind_agreement": 0.4,
+      "blind_n": 5,
+      "bias_pp": -40.0
+    },
+    "D1": {
+      "anchored_agreement": 0.6666666666666666,
+      "anchored_n": 3,
+      "blind_agreement": 1.0,
+      "blind_n": 2,
+      "bias_pp": -33.333333333333336
+    },
+    "D2": {
+      "anchored_agreement": 0,
+      "anchored_n": 0,
+      "blind_agreement": 0.4,
+      "blind_n": 5,
+      "bias_pp": -40.0
+    },
+    "E1": {
+      "anchored_agreement": 0.0,
+      "anchored_n": 5,
+      "blind_agreement": 0.2222222222222222,
+      "blind_n": 27,
+      "bias_pp": -22.22222222222222
+    },
+    "E2": {
+      "anchored_agreement": 0.125,
+      "anchored_n": 16,
+      "blind_agreement": 0.0,
+      "blind_n": 14,
+      "bias_pp": 12.5
+    },
+    "F1": {
+      "anchored_agreement": 0.3333333333333333,
+      "anchored_n": 60,
+      "blind_agreement": 0.30158730158730157,
+      "blind_n": 63,
+      "bias_pp": 3.1746031746031744
+    },
+    "F2": {
+      "anchored_agreement": 0.08333333333333333,
+      "anchored_n": 12,
+      "blind_agreement": 0.13333333333333333,
+      "blind_n": 15,
+      "bias_pp": -5.0
+    }
+  }
+}

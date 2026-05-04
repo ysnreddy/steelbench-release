@@ -1,0 +1,52 @@
+# SteelBench Experiment: Phase 2 — 1000 clips, 50/50 Tier A/B
+# 250-clip calibration subset (125 anchored + 125 blind) for anchoring bias.
+# Decoys generated post-hoc from Phase 1.5 GT batch verified clips.
+
+experiment_name: phase2_1000
+description: "Phase 2 batch — 1000 clips, 50/50 Tier A/B, 250-clip calibration subset, decoys from GT batch"
+
+clip_selection:
+  size: 1000
+  tier_b_ratio: 0.50
+  manifest: active_batch/config/batch_manifest.csv
+  min_per_class: 10
+  unclassified_budget: 100
+  exclude_annotated: true
+
+annotators:
+  annotator_1:
+    role: tier_1
+  annotator_2:
+    role: tier_1
+  annotator_3:
+    role: tier_1
+  annotator_4:
+    role: tier_1
+  expert_1:
+    role: tier_2
+  expert_2:
+    role: tier_2
+  safety_officer:
+    role: tier_3
+
+assignment:
+  double_annotate_ratio: 0.15
+  decoy_ratio: 0.10            # decoys generated from GT batch (clean methodology)
+  calibration_size: 250
+  experts_only: false
+  tier2_audit_ratio: 0.15
+
+calibration:
+  subset_size: 250
+  anchored_blind_split: 0.5
+  stratify_by: [action_class, severity_level]
+  calibration_dir: active_batch/data
+
+safety:
+  auto_flag_zones:
+    - crane_bay
+    - confined_area
+    - hot_zone
+    - elevated_area
+  escalate_all_unsafe_acts: true
+  safety_officer_reviews_all: true

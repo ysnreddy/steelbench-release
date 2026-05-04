@@ -1,0 +1,44 @@
+# SteelBench Experiment: 500-clip Pilot
+# Stratified pilot with site + BRISQUE distribution
+
+experiment_name: pilot_500
+description: "500-clip stratified pilot to validate pipeline before full 3,000"
+
+clip_selection:
+  size: 500
+  manifest: output/metadata/pilot_500_manifest.csv
+  min_per_class: 3
+  unclassified_budget: 100
+  exclude_annotated: true
+
+annotators:
+  annotator_1:
+    role: tier_1
+  annotator_2:
+    role: tier_1
+  annotator_3:
+    role: tier_1
+  annotator_4:
+    role: tier_1
+  expert_1:
+    role: tier_2               # Senior — reviews flagged clips + disagreements
+  expert_2:
+    role: tier_2               # Senior — reviews flagged clips + disagreements
+  safety_officer:
+    role: tier_3               # Safety — reviews ALL clips for safety field
+                               # Mandatory review of VLM-flagged unsafe clips
+                               # Also flags clips VLM missed
+
+assignment:
+  double_annotate_ratio: 0.15  # 15% of clips get 2 tier_1 annotators for IAA
+  decoy_ratio: 0.10            # 10% of verification clips get wrong labels
+  calibration_size: 0          # Skip calibration for pilot
+
+safety:
+  auto_flag_zones:
+    - crane_bay
+    - confined_area
+    - hot_zone
+    - elevated_area
+  escalate_all_unsafe_acts: true
+  safety_officer_reviews_all: true  # Safety officer sees ALL clips, not just flagged

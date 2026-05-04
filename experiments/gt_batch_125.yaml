@@ -1,0 +1,28 @@
+# SteelBench Experiment: 125-clip Expert GT Batch (Phase 1.5)
+# Both experts double-annotate every clip → gold standard for VLM calibration,
+# decoy generation, and anchoring bias analysis. Run in parallel with pilot.
+
+experiment_name: gt_batch_125
+description: "125-clip Expert GT batch — double-annotated by both experts as gold standard"
+
+clip_selection:
+  size: 125
+  manifest: output/metadata/gt_batch_125_manifest.csv
+  exclude_annotated: false   # GT clips are NEW, not yet annotated
+
+annotators:
+  expert_1:
+    role: tier_2
+  expert_2:
+    role: tier_2
+
+assignment:
+  double_annotate_ratio: 1.0   # both experts see all 125
+  decoy_ratio: 0.0
+  calibration_size: 0
+  experts_only: true            # skip tier_1 / tier_3
+
+safety:
+  auto_flag_zones: []
+  escalate_all_unsafe_acts: false
+  safety_officer_reviews_all: false

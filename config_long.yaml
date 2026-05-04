@@ -1,0 +1,34 @@
+# Config for long videos (>500MB / >60min)
+# Uses motion filter to skip static frames and reduce processing time
+
+# Paths
+raw_video_dir: /<DATA_ROOT>/raw_data/
+output_dir: /<DATA_ROOT>/output
+
+# Detection
+yolo_model: yolov8n.pt
+confidence_threshold: 0.25
+person_class_id: 0
+device: "0"
+
+# Frame sampling — motion filter ON for long videos
+sample_every_n_frames: 50              # 0.5fps
+sample_interval_sec: 1.0
+motion_threshold: 2.0                  # Light motion filter to skip truly static frames
+
+# Clip extraction
+clip_duration_sec: 15
+min_detections_per_clip: 2
+merge_gap_sec: 5
+padding_sec: 2
+
+# Representative frames
+num_representative_frames: 8
+frame_quality: 95
+
+# Visual condition thresholds
+low_light_intensity_threshold: 60
+
+# Output
+output_codec: libx264
+output_fps: 25

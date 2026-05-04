@@ -1,0 +1,75 @@
+# Camera-to-Zone mapping
+# Maps each camera to its plant zone(s) and applicable safety rules
+# Update this as new cameras are added from the 4TB HDD
+
+# Zone definitions
+zones:
+  crane_bay:
+    description: Overhead crane operation area
+    spatial_tags: [crane_zone, active_crane_path]
+    applicable_rules: [SR-01, SR-04, SR-11, SR-15]
+
+  rolling_mill:
+    description: Rolling mill and hot metal processing area
+    spatial_tags: [furnace_zone, hot_zone]
+    applicable_rules: [SR-01, SR-06, SR-09, SR-14]
+
+  hot_zone:
+    description: Alias for rolling_mill / furnace areas
+    spatial_tags: [furnace_zone, hot_zone]
+    applicable_rules: [SR-01, SR-06, SR-09, SR-14]
+
+  vehicle_yard:
+    description: Vehicle movement and loading area
+    spatial_tags: [vehicle_area]
+    applicable_rules: [SR-02, SR-09, SR-13]
+
+  general_work:
+    description: General work area
+    spatial_tags: []
+    applicable_rules: [SR-09, SR-10]
+
+  maintenance_shop:
+    description: Maintenance and repair shop
+    spatial_tags: []
+    applicable_rules: [SR-05, SR-09, SR-10, SR-14]
+
+  gas_plant:
+    description: Gas generation/handling area
+    spatial_tags: [gas_zone]
+    applicable_rules: [SR-08, SR-09]
+
+  confined_area:
+    description: Confined spaces and restricted zones
+    spatial_tags: [restricted, confined_space]
+    applicable_rules: [SR-03, SR-01, SR-09]
+
+  elevated_area:
+    description: Elevated work platforms and structures
+    spatial_tags: [elevated]
+    applicable_rules: [SR-01, SR-12, SR-09]
+
+# Camera assignments
+# Currently only 2 cameras from /<RAW_VIDEO_DIR>/
+# Will expand to 52+ when HDD data arrives
+cameras:
+  camera1:
+    name: "IP Camera1 - Site_Owner"
+    zones: [general_work]
+    notes: "Fixed CCTV from /<RAW_VIDEO_DIR>/"
+
+  camera2:
+    name: "IP Camera2 - Site_Owner"
+    zones: [general_work]
+    notes: "Fixed CCTV from /<RAW_VIDEO_DIR>/"
+
+  # Placeholder for future cameras from 4TB HDD
+  # camera3:
+  #   name: "Camera 3 - Crane Bay"
+  #   zones: [crane_bay]
+  # camera14:
+  #   name: "Camera 14 - Crane Bay"
+  #   zones: [crane_bay]
+  # camera23:
+  #   name: "Camera 23 - Rolling Mill"
+  #   zones: [rolling_mill]

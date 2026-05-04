@@ -1,0 +1,35 @@
+{
+  "three_way_chain": {
+    "total_comparisons": 328,
+    "vlm_tier1_agreement_pct": 52.743902439024396,
+    "vlm_tier2_agreement_pct": 52.13414634146341,
+    "tier1_tier2_agreement_pct": 76.21951219512195
+  },
+  "expert_correction_on_anchored": {
+    "tier1_accepted_vlm": 173,
+    "tier2_corrected_after_accept": 28,
+    "correction_rate_pct": 16.184971098265898,
+    "note": "When tier_1 accepted VLM prediction, how often did tier_2 expert override?"
+  },
+  "debiasing_effect": {
+    "expert_moves_away_from_vlm": 28,
+    "expert_moves_toward_vlm": 26,
+    "expert_no_change_relative": 274,
+    "net_debiasing": 2,
+    "debiasing_direction": "away_from_vlm",
+    "note": "Positive net_debiasing means experts systematically correct VLM-anchored labels"
+  },
+  "expert_override_on_tier1_overrides": {
+    "tier1_overrode_vlm": 155,
+    "tier2_agrees_tier1": 105,
+    "tier2_reverts_to_vlm": 26,
+    "tier2_agrees_tier1_pct": 67.74193548387096,
+    "tier2_reverts_pct": 16.7741935483871
+  },
+  "ppe_chain": {
+    "total_comparisons": 984,
+    "vlm_tier1_agree_pct": 70.83333333333334,
+    "vlm_tier2_agree_pct": 69.8170731707317,
+    "tier1_tier2_agree_pct": 88.21138211382113
+  }
+}

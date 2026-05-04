@@ -1,0 +1,61 @@
+# SteelBench Experiment: Phase 2 — 3000 clips, class-balanced, temporally deduplicated
+# Three-tier safety: VLM (unsafe_acts.pdf rules) → expert verification → SO audit-only
+# 10 tier_1 annotators + 2 tier_2 experts + 1 tier_3 safety officer (deferred, ~200-250 clips)
+# Target: 2,000+ annotated by April 20. Curate 3,000 as buffer.
+
+experiment_name: phase2_3000
+description: "Phase 2 — 3000 clips, class-balanced, temporally deduplicated, 10 annotators, three-tier safety"
+
+clip_selection:
+  size: 3000
+  tier_b_ratio: 0.50                    # 1500 Tier A + 1500 Tier B (or all available Tier B if pool < 1500)
+  min_per_class: 15                     # class floor for each of 27 action classes
+  unclassified_budget: 200              # X1 (unlisted_action) clips allowed
+  exclude_annotated: true               # exclude pilot 487 + GT 125
+  vlm_results: annotation_tool/data/vlm_results/vlm_annotations_full.jsonl
+  temporal_dedup:
+    enabled: true
+    window_sec: 60                      # 1-minute buckets (only true near-duplicates)
+    max_per_window: 4                   # max clips per (camera, date, 1-min window)
+
+annotators:
+  annotator_1:  { role: tier_1 }
+  annotator_2:  { role: tier_1 }
+  annotator_3:  { role: tier_1 }
+  annotator_4:  { role: tier_1 }
+  annotator_5:  { role: tier_1 }
+  annotator_6:  { role: tier_1 }
+  annotator_7:  { role: tier_1 }
+  annotator_8:  { role: tier_1 }
+  annotator_9:  { role: tier_1 }
+  annotator_10: { role: tier_1 }
+  expert_1:     { role: tier_2 }
+  expert_2:     { role: tier_2 }
+  safety_officer: { role: tier_3 }      # audit-only: expert-confirmed violations + 10% random sample
+
+assignment:
+  double_annotate_ratio: 0.15           # 15% IAA overlap
+  decoy_ratio: 0.10                     # 10% decoys from GT-verified clips
+  calibration_size: 250                 # 250-clip calibration subset
+  experts_only: false
+  tier2_audit_ratio: 0.25               # 25% random audit on VLM-"none" clips
+  auto_escalate_safety_disagreement: true  # tier_1 edited unsafe_act ≠ VLM prefill → expert queue
+
+calibration:
+  subset_size: 250
+  anchored_blind_split: 0.5            # 125 anchored + 125 blind
+  stratify_by: [action_class, severity_level]
+  calibration_dir: active_batch/data
+
+safety:
+  auto_flag_zones:
+    - crane_bay
+    - confined_area
+    - hot_zone
+    - elevated_area
+  escalate_all_unsafe_acts: true
+  safety_officer_reviews_all: false                   # NOT all clips
+  safety_officer_reviews_confirmed_violations: true   # only expert-confirmed violations
+  safety_officer_random_sample_ratio: 0.10            # + 10% random sample of expert-cleared
+  safety_rules_source: unsafe_acts.pdf                # ONLY source for safety rules
+  site_context_per_clip: true                         # include site/work_area in every VLM prompt

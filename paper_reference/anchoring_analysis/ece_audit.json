@@ -1,0 +1,134 @@
+{
+  "blind_ece": {
+    "ece": 0.4593,
+    "accuracy": 0.4412,
+    "avg_confidence": 0.9004,
+    "n": 68,
+    "bins": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "accuracy": 0.3333,
+        "confidence": 0.7667,
+        "gap": 0.4333,
+        "count": 3
+      },
+      {
+        "accuracy": 0.3778,
+        "confidence": 0.8873,
+        "gap": 0.5095,
+        "count": 45
+      },
+      {
+        "accuracy": 0.6,
+        "confidence": 0.95,
+        "gap": 0.35,
+        "count": 20
+      }
+    ]
+  },
+  "proper_chain_ece": {
+    "ece": 0.3212,
+    "accuracy": 0.574,
+    "avg_confidence": 0.8952,
+    "n": 169,
+    "bins": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "accuracy": 0.6364,
+        "confidence": 0.7674,
+        "gap": 0.1311,
+        "count": 11
+      },
+      {
+        "accuracy": 0.5686,
+        "confidence": 0.88,
+        "gap": 0.3114,
+        "count": 102
+      },
+      {
+        "accuracy": 0.5714,
+        "confidence": 0.9479,
+        "gap": 0.3764,
+        "count": 56
+      }
+    ]
+  },
+  "gold_ece": {
+    "ece": 0.2254,
+    "accuracy": 0.6687,
+    "avg_confidence": 0.8942,
+    "n": 323,
+    "bins": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "accuracy": 0.6667,
+        "confidence": 0.771,
+        "gap": 0.1043,
+        "count": 15
+      },
+      {
+        "accuracy": 0.6852,
+        "confidence": 0.8804,
+        "gap": 0.1952,
+        "count": 216
+      },
+      {
+        "accuracy": 0.6304,
+        "confidence": 0.9466,
+        "gap": 0.3162,
+        "count": 92
+      }
+    ]
+  },
+  "vlm_sourced_ece": {
+    "ece": 0.1168,
+    "accuracy": 0.7771,
+    "avg_confidence": 0.8938,
+    "n": 157,
+    "bins": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "accuracy": 0.75,
+        "confidence": 0.7808,
+        "gap": 0.0308,
+        "count": 4
+      },
+      {
+        "accuracy": 0.8,
+        "confidence": 0.8809,
+        "gap": 0.0809,
+        "count": 115
+      },
+      {
+        "accuracy": 0.7105,
+        "confidence": 0.9449,
+        "gap": 0.2344,
+        "count": 38
+      }
+    ]
+  }
+}

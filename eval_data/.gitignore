@@ -1,0 +1,5 @@
+# Eval data — frames and results are local only
+frames/
+gt/
+results/
+config/

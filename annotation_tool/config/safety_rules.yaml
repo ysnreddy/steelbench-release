@@ -1,0 +1,200 @@
+# Unsafe Acts Rule Book for SteelBench
+# Source: unsafe_acts.pdf (facility safety documentation)
+# IMPORTANT: VLM must evaluate ONLY against these rules. Do not use internet or invent rules.
+#
+# Structure:
+#   department_rules: site/zone-specific unsafe acts (applied when camera is in that zone)
+#   general_rules: universal unsafe acts (applied to ALL cameras regardless of zone)
+#
+# Zone detection hierarchy for VLM prompt:
+#   1. Camera metadata (camera_zones.csv) — definitive
+#   2. VLM image detection + camera metadata hints — if no zone tag
+#   3. General rules only — fallback
+
+department_rules:
+
+  blast_furnace:
+    sites: ["BF CDI", "BF Charging Side", "BF Conveyor"]
+    zone_tags: [furnace_zone, hot_area, confined_space]
+    observations:
+      UA-BF-01: "Lancing pipe used for barricading & anchoring of safety harness"
+      UA-BF-02: "Lancing job without wearing face shield"
+      UA-BF-03: "Workers working at tuyere platform without wearing a fire-resistant suit"
+      UA-BF-04: "Loco drivers without safety shoes and helmet"
+      UA-BF-05: "Workers engaged in cleaning activities inside a confined space without carrying a multi-gas monitor to detect hazardous gases"
+      UA-BF-06: "Food being prepared using electric heater connected through temporary wiring on the floor — fire and electrical hazard"
+      UA-BF-07: "Welders using only black welding glass rather than a full-face welding shield"
+      UA-BF-08: "Stop button of AV alarm sensor pole found in press position with a stick holding the button down"
+      UA-BF-09: "Oxygen used to clean dust from body/dress despite caution board displayed"
+      UA-BF-10: "During material handling by EOT crane, lancing pipes lifted using single hook without balanced rigging/sling on both sides"
+      UA-BF-11: "Nylon rope used for anchoring safety harness"
+      UA-BF-12: "Worker crossing over the runner for going to Machine Hall"
+
+  red:
+    sites: ["RED", "RERS"]
+    zone_tags: [elevated, restricted]
+    observations:
+      UA-RED-01: "Workers engaged in supervisory work standing on platform without safety precautions — risk of loss of balance/fall"
+      UA-RED-02: "During relining of convertor, workers going to converter top cover using ladder without wearing safety harness"
+
+  sms_1:
+    sites: ["SMS 1"]
+    zone_tags: [hot_area, elevated, crane_zone]
+    observations:
+      UA-SMS1-01: "Workers engaged in cutting/welding work at edge of floor without safety precautions"
+      UA-SMS1-02: "Workers engaged in cleaning of duct anchoring safety harness on non-standard rope"
+      UA-SMS1-03: "Workers engaged in motor repair work by standing at top of motor area without proper platform and safety harness at approx 1.8m height"
+      UA-SMS1-04: "Workers engaged in fitting work at open railing platform without safety harness"
+      UA-SMS1-05: "During removal of ladle jam by star hook, workers observed working near line of fire"
+      UA-SMS1-06: "Workers found working at hanging basket without safety harness"
+      UA-SMS1-07: "Workers anchoring lanyards at open railing pipes"
+      UA-SMS1-08: "Caster area & Pit side areas — employees and workers not using FR jackets"
+
+  sms_2:
+    sites: []
+    zone_tags: [hot_area, crane_zone]
+    observations:
+      UA-SMS2-01: "Caster area & Pit side areas — employees and workers not using FR jackets"
+      UA-SMS2-02: "Crossing the running Converter while blowing"
+
+  sinter_plant:
+    sites: ["Sinter Plant"]
+    zone_tags: [near_machinery, ground_level]
+    observations:
+      UA-SP-01: "No dust mask used in dusty areas"
+      UA-SP-02: "Damaged roller not removed from site after changing"
+
+  rmhp:
+    sites: ["RMHP"]
+    zone_tags: [near_machinery, ground_level]
+    observations:
+      UA-RMHP-01: "No dust mask used in dusty areas"
+      UA-RMHP-02: "Damaged roller not removed from site after changing"
+      UA-RMHP-03: "While removal of tarpaulins from wagons in SWS, SOP is not being followed"
+
+  crm:
+    sites: ["CRM 1&2", "CRM"]
+    zone_tags: [vehicle_area, near_machinery]
+    observations:
+      UA-CRM-01: "Vehicle movement inside the shop"
+      UA-CRM-02: "No warning bell ringing during shifting of coil & other material"
+      UA-CRM-03: "Persons crossing under loads"
+      UA-CRM-04: "No use of rubber hand gloves & goggles during operating electrical equipment"
+      UA-CRM-05: "Use of binding strap in welding machine instead of welding cable"
+      UA-CRM-06: "Use of canvas hand gloves instead of leather hand gloves"
+      UA-CRM-07: "Charging electrical equipment/panels with panel door open and standing in front of panel"
+
+  traffic:
+    sites: []
+    zone_tags: [vehicle_area, locomotive_area, walkway]
+    observations:
+      UA-TRF-01: "Yard porter getting down from loco in running condition"
+      UA-TRF-02: "No walking by yard porter during crossing the rail-road crossing"
+      UA-TRF-03: "Deployment of 2-3 persons instead of 4 persons in loco"
+      UA-TRF-04: "Presence of only 1 yard porter instead of 2 during coupling & decoupling operation"
+      UA-TRF-05: "Yard porters entering between two wagons for coupling/decoupling when operating handle is not functioning"
+      UA-TRF-06: "Running maintenance of quenching car track during operation at Coke Oven"
+      UA-TRF-07: "Checking of bolts at rail joints is overlooked"
+
+  hsm:
+    sites: ["HME"]
+    zone_tags: [near_machinery, hot_area]
+    observations:
+      UA-HSM-01: "Keeping equipment/material in walkway"
+      UA-HSM-02: "Side wall/sheet of Man lift of HSM (furnace side) is damaged"
+      UA-HSM-03: "Welding machine kept in water logging area"
+      UA-HSM-04: "Poor housekeeping at Furnace entry side"
+      UA-HSM-05: "Kept oxygen valve in open condition"
+      UA-HSM-06: "Loose/unsafe electrical connection at welding machine during power drawn"
+
+  shops:
+    sites: []
+    zone_tags: [near_machinery, vehicle_area]
+    observations:
+      UA-SHP-01: "Vehicle movement inside the shop"
+      UA-SHP-02: "No warning bell ringing during shifting of coil & other material"
+      UA-SHP-03: "Persons crossing under loads"
+      UA-SHP-04: "Use of mobile during driving & working"
+      UA-SHP-05: "No use of rubber hand gloves & goggles during operating electrical equipment"
+      UA-SHP-06: "Use of power cable stripe in welding machine instead of welding cable"
+      UA-SHP-07: "Use of canvas hand gloves instead of leather hand gloves"
+      UA-SHP-08: "No use of FR suits near furnace"
+      UA-SHP-09: "CO gas burners used for heating left burning after completion of work"
+
+  dnw:
+    sites: []
+    zone_tags: [near_machinery]
+    observations:
+      UA-DNW-01: "Non-use of Arc flash suit during rake in & rake out"
+
+  co_cc:
+    sites: ["CO-ASF"]
+    zone_tags: [locomotive_area, ground_level]
+    observations:
+      UA-COCC-01: "Scattering of tarpaulin in vicinity of rail track near tippler after removing from wagons"
+
+  central_electrical:
+    sites: []
+    zone_tags: [near_machinery, elevated, crane_zone]
+    observations:
+      UA-CEM-01: "Climbing along motor body during sling fixing in crane hooks (large motors)"
+      UA-CEM-02: "Not using proper tools and hand gloves during motor repair and handling"
+      UA-CEM-03: "Using drum as working platform during repair job in large size motors"
+
+general_rules:
+  # These apply to ALL cameras regardless of zone/site
+  UA-G-01: "Driving 4 wheelers without using safety belt"
+  UA-G-02: "While driving 2 wheeler, use of crash helmet without fastening chin strap"
+  UA-G-03: "Triple riding on 2 wheeler"
+  UA-G-04: "Use of safety helmet without fastening chin strap"
+  UA-G-05: "Use of normal shoes or sports shoes in place of safety shoes"
+  UA-G-06: "No ear plug in noisy areas"
+  UA-G-07: "No dust mask in dusty area"
+  UA-G-08: "Continuous flow of oxygen from nozzle of cutting set when in off condition"
+  UA-G-09: "Welding cables connected without lugs"
+  UA-G-10: "Welders using only face shields in place of safety helmets with face shields"
+  UA-G-11: "Welding machines without return cable"
+  UA-G-12: "No use of RCCB/VRD in welding machines"
+  UA-G-13: "Anchoring of both lanyards of full body harness at one place or one lifeline"
+  UA-G-14: "Putting hand between doors of passengers lift to open closing doors"
+  UA-G-15: "Using mobile phone while driving, at sites near machineries, staircases"
+  UA-G-16: "Workers at working area without safety helmet"
+  UA-G-17: "Use of mobile phones while ascending or descending a staircase"
+  UA-G-18: "Handrail not used while ascending or descending a staircase"
+  UA-G-19: "While grinding or cutting, workers standing in the line of fire"
+  UA-G-20: "Gas cylinders (Oxygen) not kept in upright position"
+  UA-G-21: "Soap water solution not kept near gas cutting activity"
+  UA-G-22: "Fire extinguisher not kept near hot work activity (welding/gas cutting)"
+  UA-G-23: "Use of non-industrial switch boards at project and plant site"
+  UA-G-24: "Use of bamboo ladder at site"
+  UA-G-25: "No use of double life line during sheet changing jobs due to lack of life posts above structure"
+  UA-G-26: "No use of safety goggles at workplace"
+  UA-G-27: "No use of safety shoes by line managers"
+  UA-G-28: "Lack of supervision by contractor site supervisor"
+  UA-G-29: "Loading and unloading of tankers without suitable PPEs"
+  UA-G-30: "Unaware of hazards during performing hazardous jobs"
+  UA-G-31: "Use of canvas hand gloves instead of leather hand gloves while cutting & welding jobs"
+  UA-G-32: "Material movement inside plant using Hydra crane"
+  UA-G-33: "Additional persons along with driver sitting on forklift during material transportation"
+  UA-G-34: "Non-use of guide rope during material handling"
+  UA-G-35: "Worker engaged in work at height with improper anchoring of full body harness"
+  UA-G-36: "Taking food, resting, sleeping near seal pot & gas lines"
+  UA-G-37: "Use of fabricated (non-standard) tools & tackles"
+  UA-G-38: "Working (painting, bulb replacements etc.) by standing on drums or other unstable supports"
+  UA-G-39: "Transportation of gas cylinders by rolling horizontally on the roads"
+  UA-G-40: "Scrap generated after repairs not removed timely — poor housekeeping"
+  UA-G-41: "Using domestic plug top, sockets instead of industrial plug top, sockets"
+  UA-G-42: "Correction of electrical appliances without plug top — inserting naked wire on socket"
+  UA-G-43: "Non-compliance of PPEs by stores personnel while unloading Ferro Alloys material"
+  UA-G-44: "Over-speeding of vehicle inside plant premises"
+  UA-G-45: "Persons using safety helmet instead of crash helmet while riding two wheelers inside plant"
+  UA-G-46: "Operation of plant equipment by unauthorized persons"
+  UA-G-47: "Personnel sitting on truck dala along with the material"
+  UA-G-48: "Pressure gauges not used during gas cutting"
+  UA-G-49: "Keeping equipment/material in walkway"
+  UA-G-50: "Welding machine kept in water logging area"
+  UA-G-51: "Not using grinder's safety guard"
+  UA-G-52: "Parking of vehicle at unauthorized places creating hindrance to fire tenders, ambulance"
+  UA-G-53: "Shortage of electrical supervisors in electrical contracts"
+  UA-G-54: "Workers doing unauthorized visit to sites"
+  UA-G-55: "Passing rail tracks without watching the loco movement"

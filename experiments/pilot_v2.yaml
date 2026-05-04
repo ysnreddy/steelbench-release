@@ -1,0 +1,42 @@
+# SteelBench Experiment: Pilot v2
+# Class-balanced curation with role-based annotation
+
+experiment_name: pilot_v2
+description: "Second pilot with class-balanced curation and role-based assignment"
+
+clip_selection:
+  size: 300
+  targets:                      # Explicit per-class targets
+    C1: 20                      # Crane signalling (rare)
+    C2: 15                      # Crane hook interaction
+    D1: 15                      # Manual team carry
+    F1: 15                      # Idle standing
+    F2: 10                      # Idle sitting
+  min_per_class: 5              # Auto-fill other classes to at least 5
+  unclassified_budget: 50       # Random unclassified clips for discovery
+  exclude_annotated: true       # Don't re-include already annotated clips
+
+annotators:
+  annotator_1:
+    role: tier_1
+  annotator_2:
+    role: tier_1
+  annotator_3:
+    role: tier_1
+  surya:
+    role: tier_2                # Senior — reviews flagged clips + disagreements
+  safety_officer:
+    role: tier_3                # Safety — all safety-zone clips
+
+assignment:
+  double_annotate_ratio: 0.15   # 15% of clips get 2 tier_1 annotators for IAA
+  decoy_ratio: 0.10             # 10% of verification clips get wrong labels
+  calibration_size: 0           # 0 = skip calibration (no ground truth yet)
+
+safety:
+  auto_flag_zones:              # Camera zones that trigger tier_3 review
+    - crane_bay
+    - confined_area
+    - hot_zone
+    - elevated_area
+  escalate_all_unsafe_acts: true  # If tier_1 marks unsafe_act, escalate to tier_3

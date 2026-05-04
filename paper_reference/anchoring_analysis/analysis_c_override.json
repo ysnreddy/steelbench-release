@@ -1,0 +1,304 @@
+{
+  "per_field": {
+    "action_code": {
+      "override_rate_pct": 43.91582799634035,
+      "ci_95": [
+        41.847828519721155,
+        46.00517418147878
+      ],
+      "changed": 960,
+      "total": 2186
+    },
+    "dominant_actions": {
+      "override_rate_pct": 77.06359945872802,
+      "ci_95": [
+        74.85165476399894,
+        79.13522210597151
+      ],
+      "changed": 1139,
+      "total": 1478
+    },
+    "num_workers": {
+      "override_rate_pct": 40.73071718538566,
+      "ci_95": [
+        38.252956026956305,
+        43.25653864507882
+      ],
+      "changed": 602,
+      "total": 1478
+    },
+    "occlusion_level": {
+      "override_rate_pct": 31.655992680695334,
+      "ci_95": [
+        29.739732734961986,
+        33.636613755122035
+      ],
+      "changed": 692,
+      "total": 2186
+    },
+    "overall_ppe_compliance": {
+      "override_rate_pct": 53.92422192151556,
+      "ci_95": [
+        51.37607584109081,
+        56.45202130505491
+      ],
+      "changed": 797,
+      "total": 1478
+    },
+    "ppe_harness": {
+      "override_rate_pct": 23.376029277218663,
+      "ci_95": [
+        21.649492786545522,
+        25.195977680359476
+      ],
+      "changed": 511,
+      "total": 2186
+    },
+    "ppe_helmet": {
+      "override_rate_pct": 5.85544373284538,
+      "ci_95": [
+        4.946447909132952,
+        6.9193235694981965
+      ],
+      "changed": 128,
+      "total": 2186
+    },
+    "ppe_high_vis_vest": {
+      "override_rate_pct": 28.774016468435498,
+      "ci_95": [
+        26.91475251739639,
+        30.70775314694024
+      ],
+      "changed": 629,
+      "total": 2186
+    },
+    "ppe_safety_shoes": {
+      "override_rate_pct": 40.07319304666056,
+      "ci_95": [
+        38.03801422505503,
+        42.14320070848171
+      ],
+      "changed": 876,
+      "total": 2186
+    },
+    "ppe_welding_protection": {
+      "override_rate_pct": 16.97163769441903,
+      "ci_95": [
+        15.456249809399637,
+        18.60290771140004
+      ],
+      "changed": 371,
+      "total": 2186
+    },
+    "scene_type": {
+      "override_rate_pct": 14.884979702300406,
+      "ci_95": [
+        13.1614190466599,
+        16.790608214553444
+      ],
+      "changed": 220,
+      "total": 1478
+    },
+    "spatial_context": {
+      "override_rate_pct": 32.93687099725526,
+      "ci_95": [
+        30.998088851179347,
+        34.93552022812575
+      ],
+      "changed": 720,
+      "total": 2186
+    },
+    "visibility_conditions": {
+      "override_rate_pct": 38.22733423545331,
+      "ci_95": [
+        35.78343439954864,
+        40.73227416201422
+      ],
+      "changed": 565,
+      "total": 1478
+    }
+  },
+  "per_class_action_override": {
+    "A1": {
+      "override_rate_pct": 24.719101123595504,
+      "changed": 88,
+      "total": 356
+    },
+    "A2": {
+      "override_rate_pct": 71.42857142857143,
+      "changed": 5,
+      "total": 7
+    },
+    "A3": {
+      "override_rate_pct": 0.0,
+      "changed": 0,
+      "total": 1
+    },
+    "A4": {
+      "override_rate_pct": 30.76923076923077,
+      "changed": 4,
+      "total": 13
+    },
+    "A5": {
+      "override_rate_pct": 30.76923076923077,
+      "changed": 4,
+      "total": 13
+    },
+    "B1": {
+      "override_rate_pct": 44.630071599045344,
+      "changed": 187,
+      "total": 419
+    },
+    "B2": {
+      "override_rate_pct": 53.125,
+      "changed": 34,
+      "total": 64
+    },
+    "B3": {
+      "override_rate_pct": 44.11764705882353,
+      "changed": 15,
+      "total": 34
+    },
+    "B4": {
+      "override_rate_pct": 80.0,
+      "changed": 4,
+      "total": 5
+    },
+    "B5": {
+      "override_rate_pct": 40.06514657980456,
+      "changed": 123,
+      "total": 307
+    },
+    "B6": {
+      "override_rate_pct": 47.05882352941176,
+      "changed": 8,
+      "total": 17
+    },
+    "B7": {
+      "override_rate_pct": 46.524064171122994,
+      "changed": 87,
+      "total": 187
+    },
+    "B8": {
+      "override_rate_pct": 73.91304347826086,
+      "changed": 17,
+      "total": 23
+    },
+    "B9": {
+      "override_rate_pct": 16.666666666666664,
+      "changed": 1,
+      "total": 6
+    },
+    "C1": {
+      "override_rate_pct": 87.5,
+      "changed": 14,
+      "total": 16
+    },
+    "C2": {
+      "override_rate_pct": 66.66666666666666,
+      "changed": 2,
+      "total": 3
+    },
+    "C3": {
+      "override_rate_pct": 100.0,
+      "changed": 10,
+      "total": 10
+    },
+    "C4": {
+      "override_rate_pct": 42.857142857142854,
+      "changed": 3,
+      "total": 7
+    },
+    "D1": {
+      "override_rate_pct": 33.33333333333333,
+      "changed": 2,
+      "total": 6
+    },
+    "D2": {
+      "override_rate_pct": 47.368421052631575,
+      "changed": 9,
+      "total": 19
+    },
+    "E1": {
+      "override_rate_pct": 38.70967741935484,
+      "changed": 24,
+      "total": 62
+    },
+    "E2": {
+      "override_rate_pct": 68.62745098039215,
+      "changed": 35,
+      "total": 51
+    },
+    "F1": {
+      "override_rate_pct": 52.54237288135594,
+      "changed": 279,
+      "total": 531
+    },
+    "F2": {
+      "override_rate_pct": 11.11111111111111,
+      "changed": 3,
+      "total": 27
+    },
+    "X1": {
+      "override_rate_pct": 100.0,
+      "changed": 2,
+      "total": 2
+    }
+  },
+  "per_ppe_item": {
+    "harness": {
+      "override_rate_pct": 23.376029277218663,
+      "ci_95": [
+        21.649492786545522,
+        25.195977680359476
+      ],
+      "changed": 511,
+      "total": 2186
+    },
+    "helmet": {
+      "override_rate_pct": 5.85544373284538,
+      "ci_95": [
+        4.946447909132952,
+        6.9193235694981965
+      ],
+      "changed": 128,
+      "total": 2186
+    },
+    "high_vis_vest": {
+      "override_rate_pct": 28.774016468435498,
+      "ci_95": [
+        26.91475251739639,
+        30.70775314694024
+      ],
+      "changed": 629,
+      "total": 2186
+    },
+    "safety_shoes": {
+      "override_rate_pct": 40.07319304666056,
+      "ci_95": [
+        38.03801422505503,
+        42.14320070848171
+      ],
+      "changed": 876,
+      "total": 2186
+    },
+    "welding_protection": {
+      "override_rate_pct": 16.97163769441903,
+      "ci_95": [
+        15.456249809399637,
+        18.60290771140004
+      ],
+      "changed": 371,
+      "total": 2186
+    }
+  },
+  "summary": {
+    "total_clips_compared": 1478,
+    "clips_with_any_override": 1444,
+    "clips_with_any_override_pct": 97.69959404600812,
+    "mean_edits_per_clip": 7.987821380243572,
+    "median_edits_per_clip": 5,
+    "max_edits": 46,
+    "min_edits": 0
+  }
+}

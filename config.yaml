@@ -1,0 +1,31 @@
+# Paths
+raw_video_dir: /<DATA_ROOT>/raw_data/
+output_dir: /<DATA_ROOT>/output
+
+# Detection
+yolo_model: yolov8n.pt
+confidence_threshold: 0.25
+person_class_id: 0
+device: "0"
+
+# Frame sampling
+sample_every_n_frames: 50              # 0.5fps: 1 frame every 2 seconds at 25fps
+sample_interval_sec: 1.0               # Seek-based: 1 frame per second (fast)
+motion_threshold: 0                    # 0=disabled for short curated videos
+
+# Clip extraction
+clip_duration_sec: 15                  # 15s per paper spec
+min_detections_per_clip: 2
+merge_gap_sec: 5
+padding_sec: 2
+
+# Representative frames
+num_representative_frames: 8           # At 0%, 14%, 28%, 43%, 57%, 71%, 86%, 100% of clip
+frame_quality: 95                      # JPEG quality
+
+# Visual condition thresholds
+low_light_intensity_threshold: 60      # Mean pixel intensity below this = low_light
+
+# Output
+output_codec: libx264
+output_fps: 25
